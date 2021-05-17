@@ -2,7 +2,6 @@ import './App.css';
 import Cards from './Cards';
 import { Route, BrowserRouter } from 'react-router-dom';
 
-
 import ShadowSocks from './pages/ShadowSocks';
 import Wireguard from './pages/Wireguard';
 import V2ray from './pages/V2ray';

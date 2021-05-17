@@ -15,7 +15,7 @@ const wireguard_package_list = [
     },
     {
         name: 'AQnorman Wireguard 11-20 Package',
-        link: ''
+        link: 'https://mega.nz/file/P2wxRCQT#yehxOww6o_u3PfF0pM-3fbwY3bHL-tE41d_yvh2OKTQ'
     }
 ]
 
