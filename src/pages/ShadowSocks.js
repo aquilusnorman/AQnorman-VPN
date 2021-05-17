@@ -29,6 +29,7 @@ class ShadowSocks extends React.Component{
         firebase.database().ref("/ShadowSocks").on("value", snapshot => {
             let list = [];
             snapshot.forEach(snap => {
+                console.log(snap.val());
                 list.push(snap.val());
             });
             this.setState({ freeKeyList: list });

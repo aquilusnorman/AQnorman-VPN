@@ -4,6 +4,10 @@
     margin-right: 10%;
 }
 
+.description{
+    text-align: justify;
+}
+
 .files{
     color: white;
 }
