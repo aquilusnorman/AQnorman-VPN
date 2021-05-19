@@ -7,6 +7,7 @@ import step1 from '../img/wireguard/step1.png';
 import step2 from '../img/wireguard/step2.png';
 import step3 from '../img/wireguard/step3.png';
 import step4 from '../img/wireguard/step4.png';
+import MiddleNav from './MiddleNav';
 
 const wireguard_package_list = [
     {
@@ -25,6 +26,7 @@ const wireguard_appstore = "https://apps.apple.com/us/app/wireguard/id1441195209
 function Wireguard(){
     return(
         <div className="root">
+            <MiddleNav/>
             <div className="title">Wireguard</div>
             <hr width="300px" style={{ margin: 'auto', marginBottom: '1%' }}/>
             <div className="description">

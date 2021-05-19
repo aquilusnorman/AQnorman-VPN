@@ -1,12 +1,14 @@
 import React from 'react';
 import './main.css';
 import { Table } from 'react-bootstrap';
-import { BuyOutlineBanner } from './AQbanner';
+import { BuyOutlineBanner, AskAQ } from './AQbanner';
 import firebase from '../firebase';
+import { HashLoader } from 'react-spinners';
 
 import step1 from '../img/shadowsocks/step1.png';
 import step2 from '../img/shadowsocks/step2.png';
 import step3 from '../img/shadowsocks/step3.png';
+import MiddleNav from './MiddleNav';
 
 const app_links = {
     outline: 'https://play.google.com/store/apps/details?id=org.outline.android.client&hl=en&gl=us',
@@ -21,7 +23,8 @@ class ShadowSocks extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            freeKeyList: []
+            freeKeyList: [],
+            isLoading: true
         }
     }
 
@@ -33,12 +36,21 @@ class ShadowSocks extends React.Component{
                 list.push(snap.val());
             });
             this.setState({ freeKeyList: list });
+            this.setState({ isLoading: false });
         });
     }
 
     render(){
+
+        const override = `
+            display: block;
+            margin: auto;
+        `;
+
         return(
             <div className="root">
+                <MiddleNav/>
+                <HashLoader className="spinner" color="white" loading={this.state.isLoading} size={100} css={override} />
                 <div className="title">ShadowSocks</div>
                 <hr width="300px" style={{ margin: 'auto', marginBottom: '1%' }}/>
                 <div className="description">
@@ -54,7 +66,7 @@ class ShadowSocks extends React.Component{
                 </div>
                 <hr/>
                 <div className="files">
-                <p align="left"><strong>ShadowSocks Keys</strong></p>
+                <p align="left" className="sub-title"><strong>ShadowSocks Keys</strong></p>
                 <p align="left" className="general-text">Valid until the end of this month</p>
                 <Table bordered responsive variant="dark" cellPadding={10}>
                             <thead>
@@ -73,7 +85,7 @@ class ShadowSocks extends React.Component{
                 </div>
                 <hr/>
                 <div className="usage">
-                <p align="left"><strong>ShadowSocks Key အသုံးပြုပုံ</strong></p>
+                <p align="left" className="sub-title"><strong>ShadowSocks Key အသုံးပြုပုံ</strong></p>
                 <p align="left" className="general-text">
                     ShadowSocks Protocol ကို support ပေးတဲ့ Application တိုင်းမှာ အသုံးပြုလို့ရပါတယ်။ 
                     အထူးသဖြင့် Outline, ShadowSocks နဲ့ NapsternetV တို့မှာပေါ့။ အခြား App တွေလည်းအများကြီးရှိသလို 
@@ -85,6 +97,8 @@ class ShadowSocks extends React.Component{
                     <b><i>IOS</i></b><br/>
                     Outline ⇀ <a style={{ color: '#fdc912'}} href={app_links.outline_ios}>Download Outline</a><br/>
                     FairVPN ⇀ <a style={{ color: '#fdc912'}} href={app_links.fairVPN_ios}>Download FairVPN</a><br/><br/>
+
+                    <AskAQ/>
     
                     <strong><u>STEP 1</u></strong>
                     <br/>

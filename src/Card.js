@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardImage, MDBRipple, MDBCol } from 'mdb-react-ui-kit';
-import './Cards.css';
+import './Home.css';
 import { Link } from 'react-router-dom';
 
 export default class Card extends React.Component {
@@ -16,7 +16,7 @@ export default class Card extends React.Component {
               </Link>
             </MDBRipple>
             <MDBCardBody className="my-card-body">
-              <MDBCardTitle className="cardTitle">{this.props.title}</MDBCardTitle>
+              <MDBCardTitle className="card-title">{this.props.title}</MDBCardTitle>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>

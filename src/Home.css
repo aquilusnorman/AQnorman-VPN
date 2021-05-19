@@ -1,0 +1,58 @@
+.image{
+    width: 100%;
+    height: auto;
+}
+
+.sub-title{
+    text-align: left;
+    font-size: 30px;
+}
+
+.home-description{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 2%;
+}
+
+.developer-referral{
+    height: auto;
+    margin: 2%;
+}
+
+.my-card-body{
+    background-color: rgb(28, 32, 37);
+}
+
+.card-title{
+    font-size: 30px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .my-card{
+        max-width: 14rem !important;
+        margin: auto;
+    }
+
+    .sub-title{
+        font-size: 19px;
+    }
+
+    .my-card-body{
+        padding: 1% !important;
+    }
+
+    .card-title{
+        font-size: 20px;
+        padding-top: 1%;
+    }
+
+    .developer-referral{
+        max-width: 350px;
+        margin-bottom: 10%;
+    }
+
+    .home-description{
+        font-size: 18px;
+    }
+}
